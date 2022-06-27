@@ -32,3 +32,14 @@ const deleteToDoItem = (e) => {
     todo.remove();
   }
 };
+
+// Event listeners
+
+// When clicking input, if it's not empty, add a new todo item
+input.addEventListener('click', (e) => {
+  if (input.value !== '') {
+    addToDoItem(input);
+  }
+});
+
+todoList.addEventListener('click', deleteToDoItem);
