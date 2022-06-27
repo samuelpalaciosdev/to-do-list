@@ -18,3 +18,17 @@ const addToDoItem = (inputField) => {
   // Clear Todo Input Value
   input.value = '';
 };
+
+const deleteToDoItem = (e) => {
+  // Selects the element being clicked (we want the trash-btn)
+  const item = e.target;
+  // Selects span
+  const span = e.target.parentElement;
+
+  // Delete Todo, if the elem being clicked contains the class trash-btn
+  if (item.classList.contains('trash-btn')) {
+    // Removing li
+    const todo = span.parentElement;
+    todo.remove();
+  }
+};
